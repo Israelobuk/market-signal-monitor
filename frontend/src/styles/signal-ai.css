@@ -1,0 +1,225 @@
+.sai-inline-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  align-content: start;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(122, 144, 138, 0.14);
+  border-radius: 24px;
+  background: rgba(8, 12, 11, 0.96);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.sai-inline-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.sai-inline-panel__eyebrow {
+  margin: 0 0 6px;
+  font-family: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.68rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #738681;
+}
+
+.sai-inline-panel__title {
+  margin: 0;
+  font-family: "Sora", "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #f7fbfa;
+}
+
+.sai-inline-panel__toggle {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(122, 144, 138, 0.16);
+  background: rgba(255, 255, 255, 0.02);
+  color: #dce5e2;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, transform 0.18s ease;
+}
+
+.sai-inline-panel__toggle:hover {
+  border-color: rgba(92, 141, 255, 0.24);
+  background: rgba(92, 141, 255, 0.08);
+}
+
+.sai-panel {
+  display: grid;
+  gap: 14px;
+  min-height: 0;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.sai-panel--inline {
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.sai-panel__messages {
+  min-height: 0;
+  overflow-y: auto;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding-right: 0;
+}
+
+.sai-panel__empty {
+  min-height: 0;
+  display: grid;
+  align-content: start;
+  justify-items: stretch;
+  gap: 12px;
+  padding: 16px 0 0;
+  color: #83958f;
+  text-align: left;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.sai-panel__empty-title {
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  padding: 0 2px;
+}
+
+.sai-panel__prompt-list {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+}
+
+.sai-panel__prompt {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(122, 144, 138, 0.16);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #dce5e2;
+  font-size: 0.84rem;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.sai-panel__prompt:hover {
+  border-color: rgba(92, 141, 255, 0.2);
+  background: rgba(92, 141, 255, 0.06);
+}
+
+.sai-message {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(122, 144, 138, 0.14);
+}
+
+.sai-message--assistant {
+  background: rgba(255, 255, 255, 0.028);
+}
+
+.sai-message--user {
+  background: rgba(92, 141, 255, 0.08);
+  border-color: rgba(92, 141, 255, 0.16);
+}
+
+.sai-message__role {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #738681;
+}
+
+.sai-message__content p {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #dce5e2;
+}
+
+.sai-panel__composer {
+  position: relative;
+  display: grid;
+  align-self: end;
+  margin-top: auto;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(122, 144, 138, 0.12);
+}
+
+.sai-panel__input {
+  width: 100%;
+  min-height: 104px;
+  resize: none;
+  padding: 14px 14px 62px;
+  border-radius: 16px;
+  border: 1px solid rgba(122, 144, 138, 0.16);
+  background: rgba(255, 255, 255, 0.022);
+  color: #dce5e2;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.sai-panel__input::placeholder {
+  color: #6f827c;
+}
+
+.sai-panel__input:focus {
+  border-color: rgba(92, 141, 255, 0.28);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 4px rgba(92, 141, 255, 0.08);
+}
+
+.sai-panel__send {
+  position: absolute;
+  right: 12px;
+  bottom: 18px;
+  min-width: 92px;
+  min-height: 40px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(92, 141, 255, 0.18);
+  background: rgba(92, 141, 255, 0.12);
+  color: #f3f7ff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
+}
+
+.sai-panel__send:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sai-panel__send:not(:disabled):hover {
+  background: rgba(92, 141, 255, 0.2);
+}
+
+@media (max-width: 760px) {
+  .sai-inline-panel {
+    padding: 16px;
+  }
+}

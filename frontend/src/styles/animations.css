@@ -1,0 +1,51 @@
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes activeAlertExit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(26px) scale(0.98);
+  }
+}
+
+@keyframes feedCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.alert-card--active {
+  opacity: 0;
+  transform: scale(0.96);
+  animation:
+    fadeInScale 0.4s ease forwards,
+    activeAlertExit 0.4s ease calc(var(--active-duration, 6200ms) - 0.4s) forwards;
+}
+
+.signal-feed-item--new {
+  animation: feedCardIn 520ms ease-out;
+}
+
+.alert-card--highlighted {
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.12), 0 12px 28px rgba(15, 23, 42, 0.12);
+}
